@@ -12,7 +12,7 @@ This repository merges the former `EOM-Controller-NI` (C++) and `EOM-GUI` (Pytho
 ## Installation
 
 ```bash
-pip install "eom-controller[gui] @ git+https://github.com/GITHUB_USER_PLACEHOLDER/EOM-Controller.git"
+pip install "eom-controller[gui] @ git+https://github.com/AGKarpf/EOM-Controller.git"
 ```
 
 Development checkout: `pip install -e .[gui,test]` (or run `setup_env.bat`).
