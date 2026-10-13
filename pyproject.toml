@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eom-controller"
+dynamic = ["version"]
+description = "NI-DAQmx EOM bias regulator: C++ DLL (bundled) with Python ctypes wrapper, dual-channel helpers, mock and PyQt6 widgets."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Christian Stock" }]
+dependencies = []
+
+[project.optional-dependencies]
+gui = ["PyQt6>=6.5,<7"]
+test = ["pytest>=7"]
+
+[project.gui-scripts]
+eom-controller-gui = "eom_controller.__main__:main"
+
+[tool.setuptools]
+packages = ["eom_controller"]
+
+[tool.setuptools.package-data]
+eom_controller = ["bin/*.dll", "default_eom.ini"]
+
+[tool.setuptools.dynamic]
+version = { attr = "eom_controller.__version__" }
